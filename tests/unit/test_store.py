@@ -1258,7 +1258,6 @@ def test_a_room_holding_undecodable_bytes_is_counted_not_crashed_on(tmp_path):
     assert store._reapable(p, os.stat(p).st_mtime, stillborn_rule=True) is None
 
 
-
 def test_compaction_retains_the_whole_byte_budget_at_every_record_size(tmp_path):
     """Retention is the byte budget, at every record size.
 
@@ -1302,7 +1301,6 @@ def test_compaction_retains_the_whole_byte_budget_at_every_record_size(tmp_path)
     assert len(data) <= store.COMPACT_KEEP_BYTES
     assert seqs == sorted(seqs), "compaction must leave the file ascending by seq"
     assert seqs[-1] == written, "the newest record must survive compaction"
-
 
 
 def test_the_append_path_can_size_the_file_it_just_wrote(tmp_path):
